@@ -1,0 +1,102 @@
+
+body{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px; 
+    line-height: 1.7;
+    color:#777;
+}
+
+.center-content{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	color:$color-white;
+	text-transform: uppercase;
+	text-align: center;
+	
+	.heading-pri{
+		.txtgrt{
+		display: block;
+		font-size:6rem;
+		font-weight: 400;
+		letter-spacing: 3.5rem;
+		animation-name:faderight;
+		animation-duration: 1s;
+
+		@include respond(phone){
+			letter-spacing: 1rem;
+			font-size: 5rem;
+		}
+
+		}
+		.txtsml{
+			display:block;
+			font-size:2rem;
+			font-weight: 400;
+			letter-spacing: 1.5rem;
+			animation-name:fadeleft;
+			animation-duration: 1s;
+
+			@include respond(phone){
+			letter-spacing: .5rem;
+			font-size: 1rem;
+			}
+		}
+	}
+
+	.btn-white{
+		background-color: #fff;
+		color:#777;
+		margin-top:2rem;
+	}
+	.btn-animation{
+		animation-name:moveup;
+		animation-duration: 1.5s;
+		animation-delay: .5s;
+		animation-fill-mode: backwards;
+	}
+}
+
+.heading-sec{
+	font-size:3.5rem;
+	text-transform: uppercase;
+	//===text gradient===
+	display:inline-block;
+	font-weight: 700;
+	background:linear-gradient(to right, $color-lightGreen,$color-darkGreen);
+	color:transparent;
+	-webkit-background-clip:text;
+	//=======
+	transition:all .2s;
+	letter-spacing:.2rem;
+
+	@include respond(tab-port){
+		font-size:3rem;
+	}
+
+	@include respond(phone){
+		font-size:2.5rem;
+	}
+
+
+	&:hover{
+		transform:skewX(15deg) skewY(2deg) scale(1.1);
+		text-shadow:.5rem 1rem 2rem rgba($color-black,.2);
+	}
+}
+
+.heading-tert{
+	font-size: $default-font-size;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.para{
+	font-size:1.5rem;
+
+	&:not(:last-child){
+		margin-bottom:3rem;
+	}
+}

@@ -1,0 +1,67 @@
+.img-composition{
+	position:relative;
+
+	&__img{
+		width:50%;
+		box-shadow: 0 1rem 1.5rem rgba($color-black,.4);
+		border-radius: .1rem;
+		position:absolute;
+		transition:all .3s;
+
+		@include respond(tab-port){
+			width:33.333%;
+			box-shadow: 0 1rem 1rem rgba($color-black,.3);
+			position:relative;
+			float:left;
+		}
+	
+		&:hover{
+			transform:scale(1.1) translateY(-.5rem);
+			z-index: 10;
+			box-shadow: 0 1.5rem 2rem rgba($color-black,.4);
+			outline:1.5rem solid $color-mediumGreen;
+			outline-offset: 1.5rem;
+			
+		}
+
+		&--img1{
+			top:-2rem;
+			left:0;
+
+			@include respond(tab-port){
+				top:0;
+				transform:scale(1.2);
+
+			}
+		}
+
+		&--img2{
+			top:2rem;
+			right:2rem;
+			@include respond(tab-port){
+				top:-1rem;
+				right:0;
+				transform:scale(1.3);
+				z-index: 1;
+			}
+		}
+
+		&--img3{
+			top:10rem;
+			left:20%;
+			@include respond(tab-port){
+				top:-1%;
+				left:0;
+				transform:scale(1.2);
+
+			}
+		}
+	}
+
+	//for shrinking of other images
+	&:hover &__img:not(:hover){
+		transform:scale(.95);
+	}
+	//img-composition:hover composition__img:not(:hover);
+	//img-composition ke hover state men select kro then composition__img men not hover hn (like not last-child) use select kro.
+}
